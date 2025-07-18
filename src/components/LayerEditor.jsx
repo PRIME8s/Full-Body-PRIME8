@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 const owner = 'PRIME8s';
 const repo = 'prime8s-closet';
 const basePath = 'assets';
-const baseURL = `https://raw.githubusercontent.com/${owner}/${repo}/main/${basePath}`;
+const baseURL = `https://github.com/PRIME8s/Full-Body-PRIME8/tree/main/assets`;
 
 const layerOrder = ['background', 'fur', 'clothes', 'hat', 'eyes', 'mouth'];
 
@@ -16,7 +16,7 @@ export default function LayerEditor({ onExport }) {
     const result = {};
     for (const layer of layerOrder) {
       const res = await fetch(
-        `https://api.github.com/repos/${owner}/${repo}/contents/${basePath}/${layer}`
+        `https://github.com/PRIME8s/Full-Body-PRIME8/tree/main/assets/${layer}`
       );
       if (!res.ok) {
         console.error(`Failed to fetch ${layer}:`, res.status);
